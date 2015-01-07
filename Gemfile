@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
+gem 'pry-rails'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
