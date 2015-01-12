@@ -1,5 +1,6 @@
 class ContentsController < ApplicationController
-  def find_contents
-    @content = Content.find_by_keyword(params[:keyword])
+  def find_content
+    @record =  Content.find_by_url(params[:keyword])
+    @content = JSON.parse(@record.data)
   end
 end
