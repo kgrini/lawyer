@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  get 'cat/:keyword' => 'content#keyword'
+  root "home#index"
+  get ':keyword' => 'contents#find_content'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
