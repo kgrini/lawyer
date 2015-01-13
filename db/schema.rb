@@ -47,9 +47,15 @@ ActiveRecord::Schema.define(version: 20150107124213) do
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "categories", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "keyword",    limit: 1000
+    t.string   "url",        limit: 1000
+    t.text     "data"
+    t.string   "title",      limit: 1000
+    t.string   "subtitle",   limit: 1000
+    t.string   "links",      limit: 1000
+    t.string   "status"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "contents", force: true do |t|

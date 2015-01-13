@@ -1,0 +1,53 @@
+<div class="page-second">
+    <div class="row">
+        <div class="small-12 large-12 columns">
+
+            <div class="top">
+                <div class="man"></div>
+                <div class="vesi"></div>
+                <h3>Получите юридическую<br />
+                помощь совершенно</h3>
+
+                <h4>бесплатно</h4>
+
+                <div class="phone"> <span>+7 (495)</span> 123-45-67</div>
+            </div>
+
+            <div class="row">
+                <div class="large-10 large-centered columns">
+                    <div class="form-review">
+                        <form>
+                            <h3>Заполните форму и мы перезвоним Вам через <span>14</span> минут</h3>
+                            <input type="text" placeholder="Ф.И.О">
+                            <input type="text" placeholder="№ телефона">
+                            <input type="email" placeholder="e-mail">
+                            <input type="text" placeholder="регион">
+                            <textarea placeholder="задайте вопрос"></textarea>
+                            <h4>* обязательное поле для заполнения</h4>
+                            <a class="button" href="#">Отправить</a>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="tags">
+                <!--<a href="#">алименты</a>   <a href="#">договор</a>   <a href="#">документы</a>   <a href="#">квартира</a>   <a href="#">хищение</a>   <a href="#">налог</a>   <a href="#">наследство</a>   <a href="#">долг</a>   <a href="#">мошенничество</a>   <a href="#">недвижимость</a>-->
+                <!--<a href="#">пенсия</a>   <a href="#">брак</a>   <a href="#">развод</a>   <a href="#">льготы</a>   <a href="#">штраф</a>   <a href="#">дтп</a>   <a href="#">юрист</a>   <a href="#">суд</a>   <a href="#">жалоба</a>   <a href="#">ответственность</a>   <a href="#">спор</a>   <a href="#">увольнение</a>   <a href="#">взятка</a>-->
+                <!--<a href="#">шантаж</a>   <a href="#">арест</a>   <a href="#">приказ</a>   <a href="#">затопление</a>   <a href="#">арбитраж</a>   <a href="#">апелляция</a>   <a href="#">взыскание</a>   <a href="#">консалтинг</a>   <a href="#">бизнес</a>   <a href="#">ооо</a>   <a href="#">зао</a>   <a href="#">кредит</a>-->
+                <!--<a href="#">банк   <a href="#">адвокат</a>   <a href="#">москва</a>   <a href="#">ребенок</a>   <a href="#">преступление   <a href="#">возврат</a>   <a href="#">страхование</a>-->
+                <% @categories.each do |category| %>
+
+                <!--<a href="http://localhost:3000/Sredne_mesyachnaya_zarabotnaya_plata">-->
+                  <%= link_to category.keyword, controller: :categories, action: :category_content, keyword: category.url %>
+                <% end %>
+            </div>
+
+            <div class="copy">
+                © domen, 2014. Все права защищены.
+            </div>
+
+        </div>
+    </div>
+
+</div>

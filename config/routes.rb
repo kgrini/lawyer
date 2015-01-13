@@ -2,14 +2,15 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  root "home#index"
-  get ':keyword' => 'contents#find_content'
+  root 'home#index'
+  get ':keyword' => 'categories#category_content'
+  get 'category/:keyword' => 'contents#find_content'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  # root 'welcome#argerg'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

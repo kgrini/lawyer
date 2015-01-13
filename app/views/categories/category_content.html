@@ -1,0 +1,265 @@
+<header>
+    <div class="row">
+        <div class="large-6 medium-6 small-12 columns">
+            <div class="logo">
+                Профессиональная бесплатная<br/>
+                юридическая помощь
+            </div>
+        </div>
+        <div class="large-6 medium-6 small-12 columns">
+            <div class="phone">
+                +7(495) 123-45-67
+            </div>
+            <div class="button-area">
+                <a href="#" class="button">заказать обратный звонок</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="page">
+    <div class="row">
+        <div class="large-12 columns">
+
+            <div class="welcome">
+
+                <div class="text">
+                    <h3>Нуждаетесь в бесплатной консультации юриста?</h3>
+
+                    <p>Заполните форму ниже или <a href="#">закажите обратный звонок</a> и получите ответ через
+                        <span>7</span> минут.</p>
+                </div>
+
+            </div>
+
+            <div class="form">
+                <div class="row">
+                    <div class="large-3 columns">
+
+                    </div>
+                    <div class="large-9 columns">
+                        <h3>Заполните форму заявки и ждите звонка</h3>
+
+                        <form method="get">
+
+                            <div class="row">
+                                <div class="large-4 columns">
+                                    <input type="text" placeholder="город">
+                                    <input type="text" placeholder="имя">
+                                    <input type="text" placeholder="№ телефона">
+                                </div>
+                                <div class="large-8 columns">
+                                    <textarea placeholder="введите вопрос"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="large-6 columns">
+                                    <span>Ваши данные не будут переданы третьим лицам.</span>
+                                </div>
+                                <div class="large-6 columns">
+                                    <a href="#" class="button button_on_page form-button">отправить вопрос</a>
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="box-area">
+                <div class="row">
+                    <div class="large-3 medium-3 small-3 columns">
+                        <div class="box">
+                            <a href="#" class="pen">
+                                Заполните форму
+                                заявки или закажите
+                                обратный звонок.
+                            </a>
+                        </div>
+                    </div>
+                    <div class="large-3 medium-3 small-12 columns">
+                        <div class="box">
+                            <a href="#" class="girl">
+                                Юрист перезвонит и
+                                расскажет о этапах
+                                решения проблемы.
+                            </a>
+                        </div>
+                    </div>
+                    <div class="large-3 medium-3 small-3 columns">
+                        <div class="box">
+                            <a href="#" class="list">
+                                Поможем собрать
+                                все необходимые
+                                документы для дела.
+                            </a>
+                        </div>
+                    </div>
+                    <div class="large-3 medium-3 small-3 columns">
+                        <div class="box">
+                            <a href="#" class="flag">
+                                Доведем дело
+                                до логического конца.
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comments-area">
+                <h4><%= @record.keyword %></h4>
+
+                <div class="comment-list">
+                    <% @content.each do |content| %>
+
+                    <div class="comment">
+
+                        <div class="ava">
+                            <%= image_tag("rss.jpg", :alt => "rss feed") %>
+                        </div>
+
+                        <div class="comment-body">
+                            <h4><%= content["author"]["name"] %></h4>
+
+                            <p><%= content["question"] %></p>
+
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="comment-respond">
+                            <div class="ava">
+                                <%= image_tag("rss.jpg", :alt => "rss feed") %>
+                            </div>
+
+                            <div class="comment-body">
+                                <h4><%= content["answer"] %></p></h4><span class="stars"></span>
+
+                                <p>
+                                <p><%= content["banswer"] %></p>
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <div class="comment-link">
+                            свернуть
+                        </div>
+
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="page-bottom">
+
+    <div class="row">
+        <div class="large-12 columns">
+            <h3>
+                <span>актуальные темы:</span>
+            </h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="large-4 medium-12 small-12 columns">
+            <ul>
+                <li><a href="#">Расчет размера алиментов</a></li>
+                <li><a href="#">Решение об уменьшении алиментов</a></li>
+                <li><a href="#">Взыскание алиментов россия</a></li>
+                <li><a href="#">Апелляционная жалоба о взыскании алиментов</a></li>
+                <li><a href="#">Срок взыскания алиментов</a></li>
+                <li><a href="#">Расторжение брака и взыскание алиментов</a></li>
+                <li><a href="#">Алименты детям военнослужащих</a></li>
+            </ul>
+        </div>
+
+        <div class="large-4 medium-12 small-12 columns">
+            <ul>
+                <li><a href="#">Алименты беременной жене</a></li>
+                <li><a href="#">Вычитывают алименты по страховке несчатного случая</a></li>
+                <li><a href="#">Алименты на совершеннолетнего нетрудоспособного</a></li>
+                <li><a href="#">Апелляционная жалоба о взыскании алиментов</a></li>
+                <li><a href="#">Основания для алиментов</a></li>
+                <li><a href="#">Расчет алиментов на 2 детей</a></li>
+                <li><a href="#">Взыскание алиментов судебными приставами</a></li>
+            </ul>
+        </div>
+
+        <div class="large-4 medium-12 small-12 columns">
+            <ul>
+                <li><a href="#">Взыскание алиментов за 3 года</a></li>
+                <li><a href="#">Взыскание алиментов с инвалидав</a></li>
+                <li><a href="#">Взыскание алиментов с безработных</a></li>
+                <li><a href="#">Восстановление алиментов</a></li>
+                <li><a href="#">Задолженность по алиментам</a></li>
+                <li><a href="#">Повышение алиментов</a></li>
+                <li><a href="#">Алименты</a></li>
+            </ul>
+
+            <div class="brush"></div>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    <div class="row">
+        <div class="large-3 medium-6 small-12 columns">
+            <div class="number">
+                <span>+7(495)</span> 123-45-67
+            </div>
+        </div>
+
+        <div class="large-9 medium-6 small-12 columns">
+            <div class="copy">
+                <p>© domen.ru 2010 - 2014</p>
+
+                <p>Все права защищены.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    (function (b, o, i, l, e, r) {
+        b.GoogleAnalyticsObject = l;
+        b[l] || (b[l] =
+                function () {
+                    (b[l].q = b[l].q || []).push(arguments)
+                });
+        b[l].l = +new Date;
+        e = o.createElement(i);
+        r = o.getElementsByTagName(i)[0];
+        e.src = '//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e, r)
+    }(window, document, 'script', 'ga'));
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+</script>
+
+<script>
+    $( ".comment-respond" ).hide();
+    $( ".comment-link" ).text("развернуть");
+    $( ".comment-link" ).on('click', function(){
+        console.log($(this).prev());
+        $(this).prev().show();
+        $(this).text('свернуть');
+    });
+
+    if ($(".comment-link").text() == 'свернуть') {
+        $( ".comment-link" ).on('click', function(){
+
+            $(".comment-respond").hide();
+            $(this).text('развернуть');
+        });
+    }
+
+</script>

@@ -112,7 +112,7 @@ ActiveAdmin.setup do |config|
   # roots for each namespace.
   #
   # Default:
-  # config.root_to = 'dashboard#index'
+  # config.root_to = 'dashboard#argerg'
 
   # == Admin Comments
   #
@@ -121,7 +121,7 @@ ActiveAdmin.setup do |config|
   # You can completely disable comments:
   # config.comments = false
   #
-  # You can disable the menu item for the comments index page:
+  # You can disable the menu item for the comments argerg page:
   # config.show_comments_in_menu = false
   #
   # You can change the name under which comments are registered:
@@ -225,7 +225,7 @@ ActiveAdmin.setup do |config|
 
   # == Filters
   #
-  # By default the index screen includes a "Filters" sidebar on the right
+  # By default the argerg screen includes a "Filters" sidebar on the right
   # hand side with a filter for each attribute of the registered model.
   # You can enable or disable them for all resources here.
   #

@@ -1,13 +1,13 @@
 class Content < ActiveRecord::Base
+  belongs_to :category
   before_create :set_random_links_to_field, :generate_translit_from_keywords
 
   def set_random_links_to_field
     self.links = get_random_content_id
-    binding.pry
   end
 
   def get_random_content_id
-    "#{Content.order("RAND()").pluck(:id).first(10).join(",")}"
+    "#{category.contents.order("RAND()").pluck(:id).first(10).join(",")}"
   end
 
   def generate_translit_from_keywords
