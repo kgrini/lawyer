@@ -6,6 +6,11 @@ class Content < ActiveRecord::Base
     self.links = get_random_content_id
   end
 
+  def get_random_contents
+    category.contents.select(:url, :keyword).order("RAND()").first(21)
+  end
+
+
   def get_random_content_id
     "#{category.contents.order("RAND()").pluck(:id).first(10).join(",")}"
   end

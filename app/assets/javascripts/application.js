@@ -14,3 +14,15 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$( ".comment-respond" ).hide();
+$( ".comment-link" ).text("развернуть");
+$( ".comment-link" ).on('click', function(){
+    if ($(this).text() == 'развернуть') {
+        $(this).prev().show();
+        $(this).text('свернуть');
+    } else{
+        $(this).prev().hide();
+        $(this).text('развернуть');
+    }
+});

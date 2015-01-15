@@ -1,5 +1,6 @@
 class Category < ActiveRecord::Base
   has_many :contents
+
   before_create :set_random_links_to_field, :generate_translit_from_keywords
 
   def set_random_links_to_field
@@ -7,7 +8,11 @@ class Category < ActiveRecord::Base
   end
 
   def get_random_content_id
-    "#{contents.order("RAND()").pluck(:id).first(10).join(",")}"
+    "#{Category.order("RAND()").pluck(:id).first(10).join(",")}"
+  end
+
+  def get_random_contents
+    contents.select(:url, :keyword).order("RAND()").first(21)
   end
 
   def generate_translit_from_keywords

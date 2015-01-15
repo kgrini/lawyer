@@ -557,12 +557,12 @@ html {
 
 @font-face {
     font-family: 'bebas_neuebold';
-    src: asset_url('bebasneue_bold-webfont.eot');
-    src: asset_url('bebasneue_bold-webfont.eot?#iefix') format('embedded-opentype'),
-    asset_url('bebasneue_bold-webfont.woff2') format('woff2'),
-    asset_url('bebasneue_bold-webfont.woff') format('woff'),
-    asset_url('bebasneue_bold-webfont.ttf') format('truetype'),
-    asset_url('bebasneue_bold-webfont.svg#bebas_neuebold') format('svg');
+    src: url(font-path('bebasneue_bold-webfont.eot'));
+    src: url(font-path('bebasneue_bold-webfont.eot?#iefix')) format('embedded-opentype'),
+    url(font-path('bebasneue_bold-webfont.woff2')) format('woff2'),
+    url(font-path('bebasneue_bold-webfont.woff')) format('woff'),
+    url(font-path('bebasneue_bold-webfont.ttf')) format('truetype'),
+    url(font-path('bebasneue_bold-webfont.svg#bebas_neuebold')) format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -571,15 +571,20 @@ html {
 
 @font-face {
     font-family: 'lobster_1.4regular';
-    src: asset_url('nll5sxle-webfont.eot');
-    src: asset_url('nll5sxle-webfont.eot?#iefix') format('embedded-opentype'),
-    asset_url('nll5sxle-webfont.woff2') format('woff2'),
-    asset_url('nll5sxle-webfont.woff') format('woff'),
-    asset_url('nll5sxle-webfont.ttf') format('truetype'),
-    asset_url('nll5sxle-webfont.svg#lobster_1.4regular') format('svg');
+    src: url(font-path('nll5sxle-webfont.eot'));
+    src: url(font-path('nll5sxle-webfont.eot?#iefix'))format('embedded-opentype'),
+    url(font-path('nll5sxle-webfont.woff2')) format('woff2'),
+    url(font-path('nll5sxle-webfont.woff')) format('woff'),
+    url(font-path('nll5sxle-webfont.ttf')) format('truetype'),
+    url(font-path('nll5sxle-webfont.svg#lobster_1.4regular')) format('svg');
     font-weight: normal;
     font-style: normal;
 
+}
+
+@font-face {
+  font-family: 'LobsterTTF'; /* Имя шрифта */
+  src: url(font-path('Lobster.ttf')); /* Путь к файлу со шрифтом */
 }
 
 ::-moz-selection {
@@ -1166,7 +1171,7 @@ footer .copy p{
 }
 
 .page-second .top h3{
-    font-family: 'lobster_1.4regular';
+    font-family: 'LobsterTTF';
     font-size: 36px;
     line-height: 36px;
     color: #ffffff;
@@ -1185,18 +1190,30 @@ footer .copy p{
     text-transform: uppercase;
 }
 
+.free-title{
+  background-image: url("free-title.png");
+//  background-position: center top;
+  background-repeat:no-repeat;
+  background-size:contain;
+  max-width: 486px;
+  content: '';
+  display: block;
+  min-height: 180px;
+  margin-left: 250px;
+  margin-top: -40px;
+}
+
 .page-second .top .phone{
     color: #ffffff;
     font-size: 60px;
     line-height: 60px;
-    font-family: 'lobster_1.4regular';
-    margin: 16px 0 0 0;
+    font-family: 'LobsterTTF';
+    margin: -30px 0 0 0;
 }
 
 .page-second .top .phone span{
     color: #e2f7ff;
     font-size: 36px;
-
 }
 
 .page-second .form-review{
@@ -1292,7 +1309,9 @@ footer .copy p{
     font-family: 'PT Sans', sans-serif;
 }
 
-
+.new-cursor{
+ cursor: pointer
+}
 
 @media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
