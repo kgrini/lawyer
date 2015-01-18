@@ -26,3 +26,48 @@ $( ".comment-link" ).on('click', function(){
         $(this).text('развернуть');
     }
 });
+
+function validateField(object){
+    if (object.val() == 0){
+        object.focus();
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function nameIsValid(){
+    validateField($("#imea"));
+}
+
+function phoneIsValid(){
+    validateField($("#telefon"));
+}
+
+function regionIsValid(){
+    validateField($("#region"));
+}
+
+function emailIsValid(){
+    validateField($("#email"));
+}
+
+function questionIsValid(){
+    validateField($("#vopros"));
+}
+
+function formIsValid(){
+    return  questionIsValid() ||  regionIsValid() || emailIsValid() || phoneIsValid()|| nameIsValid()
+}
+
+function buildJson(){
+
+}
+
+$('.button').on('click', function(){
+    if (formIsValid()){
+        data = buildJson();
+        $.post('', data, function(response) {
+        }, 'json');
+    }
+});
