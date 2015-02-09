@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Lawyer" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Совет Юриста" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -15,5 +15,6 @@
 
     <%= yield %>
     <%= javascript_include_tag "application" %>
+    <script src="http://form.leadiacloud.com/widget.js?p=lawyer&w=5282"></script>
   </body>
 </html>

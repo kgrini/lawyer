@@ -60,14 +60,57 @@ function formIsValid(){
     return  questionIsValid() ||  regionIsValid() || emailIsValid() || phoneIsValid()|| nameIsValid()
 }
 
-function buildJson(){
-
-}
-
 $('.button').on('click', function(){
     if (formIsValid()){
-        data = buildJson();
-        $.post('', data, function(response) {
-        }, 'json');
+        $.getJSON("http://smart-ip.net/geoip-json?callback=?", function(data){
+
+            function returnJson(data) {
+                var formData = {};
+                formData = {   form_page: 'http://juristsovet.ru',
+                    referer: document.referrer,
+                    client_api: data.host,
+                    userid: 5282,
+                    product: 'lawyer',
+                    template: 'default',
+                    key: null,
+                    first_last_name: $('#imea').val(),
+                    phone: $('#telefon').val(),
+                    email: $('#email').val(),
+                    region: $('#region').val(),
+                    question: $('#vopros').val(),
+                    subaccount: null
+                };
+                return formData;
+
+            }
+
+            $.ajax({
+                type: "POST",
+                url: 'http://cloud1.leadia.ru/lead.php',
+                contentType: "application/json; charset=utf-8",
+                dataType: 'json',
+                data: returnJson(data),
+                success: function(){
+                    resetForm();
+                }
+            });
+        });
     }
 });
+
+$('.header .button').on('click', function(){
+    questionIsValid()
+});
+
+function resetForm(){
+    $('#imea').val('');
+    $('#telefon').val('');
+    $('#email').val('');
+    $('#region').val('');
+    $('#vopros').val('');
+}
+
+$(".button").on('click', function(){
+
+});
+

@@ -849,9 +849,13 @@ header .button-area{
     border-radius: 4px;
     width: 90%;
     padding: 15px;
-    height: 140px;
+    height: 190px;
     resize: none;
     -webkit-border-radius: 4px;
+}
+
+.button-area .button  {
+  cursor: pointer;
 }
 
 .form span{
