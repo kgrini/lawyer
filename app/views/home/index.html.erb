@@ -32,8 +32,8 @@
             </div>
 
             <div class="tags">
-                <% @categories.each do |category| %>
-                  <%= link_to category.keyword, controller: :category, action: :category_content, keyword: category.url %>
+                <% @keywords.each do |keyword| %>
+                  <%= link_to keyword.keyword, controller: :questions, action: :question_content, keyword: keyword.translit %>
                 <% end %>
             </div>
 

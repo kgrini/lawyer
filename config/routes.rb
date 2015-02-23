@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   root 'home#index'
-  get ':keyword' => 'category#category_content'
-  get 'category/:keyword' => 'contents#find_content'
+  get ':keyword' => 'questions#question_content'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

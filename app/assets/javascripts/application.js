@@ -102,6 +102,7 @@ $('.header .button').on('click', function(){
     questionIsValid()
 });
 
+
 function resetForm(){
     $('#imea').val('');
     $('#telefon').val('');

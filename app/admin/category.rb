@@ -1,4 +1,4 @@
-ActiveAdmin.register Category do
+ActiveAdmin.register Answer do
 
 
   # See permitted parameters documentation:

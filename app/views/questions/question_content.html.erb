@@ -114,45 +114,45 @@
             </div>
 
             <div class="comments-area">
-                <h4><%= @record.keyword %></h4>
+                <h4><%= @keyword.keyword %></h4>
 
                 <div class="comment-list">
-                    <% @content.each do |content| %>
+                    <% @questions.each do |content| %>
 
                     <div class="comment">
 
                         <div class="ava">
-                            <%= image_tag("rss.jpg", :alt => "rss feed") %>
+                            <img />
                         </div>
 
                         <div class="comment-body">
-                            <h4><%= content["author"]["name"] %></h4>
+                            <h4><%= content.user.firstname %> <%= content.user.lastname %></h4>
 
-                            <p><%= content["question"] %></p>
+                            <p><%= content.body %></p>
 
                         </div>
 
                         <div class="clearfix"></div>
+                        <% if content.answers.present? %>
+                            <div class="comment-respond">
+                                <div class="ava">
+                                  <img />
+                                </div>
 
-                        <div class="comment-respond">
-                            <div class="ava">
-                                <%= image_tag("rss.jpg", :alt => "rss feed") %>
+                                <div class="comment-body">
+                                    <h4><%= content["answer"] %></p></h4><span class="stars"></span>
+
+                                    <p>
+                                    <p><%=content["banswer"] %></p>
+                                    </p>
+
+                                </div>
                             </div>
 
-                            <div class="comment-body">
-                                <h4><%= content["answer"] %></p></h4><span class="stars"></span>
-
-                                <p>
-                                <p><%=content["banswer"] %></p>
-                                </p>
-
+                            <div class="comment-link new-cursor">
+                                свернуть
                             </div>
-                        </div>
-
-                        <div class="comment-link new-cursor">
-                            свернуть
-                        </div>
-
+                       <% end %>
                     </div>
                     <% end %>
                 </div>
@@ -176,7 +176,7 @@
         <div class="large-4 medium-12 small-12 columns">
             <ul>
                 <% @urls.first(7).each do |url| %>
-                <li><%= link_to url.keyword,  controller: :contents, action: :find_content, keyword: url.url %></li>
+                <li><%= link_to url.keyword,  controller: :questions, action: :question_content, keyword: url.translit %></li>
                 <% end %>
             </ul>
         </div>
@@ -184,7 +184,7 @@
         <div class="large-4 medium-12 small-12 columns">
             <ul>
               <% @urls.first(14).last(7).each do |url| %>
-                  <li><%= link_to url.keyword, controller: :contents, action: :find_content, keyword: url.url %></li>
+                  <li><%= link_to url.keyword, controller: :questions, action: :question_content, keyword: url.translit %></li>
               <% end %>
             </ul>
         </div>
@@ -192,7 +192,7 @@
         <div class="large-4 medium-12 small-12 columns">
             <ul>
               <% @urls.last(7).each do |url| %>
-                  <li><%= link_to url.keyword, controller: :contents, action: :find_content, keyword: url.url %></li>
+                  <li><%= link_to url.keyword, controller: :questions, action: :question_content, keyword: url.translit %></li>
               <% end %>
             </ul>
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150107124213) do
+ActiveRecord::Schema.define(version: 20150217203229) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -46,29 +46,40 @@ ActiveRecord::Schema.define(version: 20150107124213) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "categories", force: true do |t|
+  create_table "answers", force: true do |t|
+    t.integer  "question_id"
+    t.integer  "user_id"
+    t.text     "body"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "keywords", force: true do |t|
     t.string   "keyword",    limit: 1000
-    t.string   "url",        limit: 1000
-    t.text     "data"
-    t.string   "title",      limit: 1000
-    t.string   "subtitle",   limit: 1000
-    t.string   "links",      limit: 1000
-    t.string   "status"
+    t.string   "translit",   limit: 1000
+    t.integer  "processed",  limit: 1
+    t.string   "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "questions", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "keyword_id"
+    t.text     "body"
+    t.string   "region",     limit: 1000
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
 
-  create_table "contents", force: true do |t|
-    t.string   "keyword",     limit: 1000
-    t.string   "url",         limit: 1000
-    t.text     "data"
-    t.string   "title",       limit: 1000
-    t.string   "subtitle",    limit: 1000
-    t.string   "links",       limit: 1000
-    t.string   "status"
-    t.integer  "category_id"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+  create_table "users", force: true do |t|
+    t.string   "username"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "avatar"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

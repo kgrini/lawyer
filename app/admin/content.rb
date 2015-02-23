@@ -1,4 +1,4 @@
-ActiveAdmin.register Content do
+ActiveAdmin.register Question do
 
 
   # See permitted parameters documentation:

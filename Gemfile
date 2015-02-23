@@ -33,6 +33,10 @@ gem 'spring',        group: :development
 
 gem 'mina'
 
+gem 'vydumschik'
+
+gem 'faker'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
