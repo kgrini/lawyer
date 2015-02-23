@@ -7,25 +7,19 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-# 3.times do
-#   User.create(firstname: nil, lastname: nil)
-# end
 
 User.all.each do |content|
   unless content.firstname
     content.update_attributes(firstname: Vydumschik::Name.first_name, lastname: Vydumschik::Name.surname)
   end
 end
-#
-# [' рассмотрение дела участники административного дела',
-# 'рассмотрение заявления в суде',
-# 'рассмотрение заявления о разводе'].each do |word|
-#   Keyword.create(keyword: word)
-# end
 
-# Keyword.all.each do |record|
-#   record.update_attributes(translit: Keyword.generate_russian_translit(record.keyword).split(" ").join("_"))
-# end
+
+Keyword.all.each do |record|
+  unless record.translit
+   record.update_attributes(translit: Keyword.generate_russian_translit(record.keyword).split(" ").join("_"))
+  end
+end
 
 Question.all.each do |question|
   unless question.user_id
@@ -33,10 +27,18 @@ Question.all.each do |question|
       question.update(user_id: User.first.id)
     else
       prev_question_user_id = Question.find(question.id - 1).user_id
-      question.update(user_id: User.find(prev_question_user_id +1).id)
+      question.update(user_id: User.find(prev_question_user_id + 1).id)
     end
   end
 end
+
+#------------------------------------------------------------------
+#Test data
+
+# 3.times do
+#   User.create(firstname: nil, lastname: nil)
+# end
+
 
 # ['Здравствуйте! Будьте так любезны можно ли в момент рассмотрения заявления в суде об оспаривании постановления Судебного пристава обратиться в суд с заявлением о прекращении данного исполнительного производства в связи с фактическим исполнением',
 #  'Добрый день! Меня интересует рассмотрение искового заявления в суд об установлении факта принятия наследства. мою маму вызывают в суд на рассмотрение искового заявления её бывшей свекрови к ней, об установлении факта принятия наследства моего отчима, который умер в 2011 году.',
@@ -44,4 +46,11 @@ end
 # ].each do |word|
 #   Question.create(body: word, region: 'blablabla', keyword_id: Keyword.first.id, user_id: User.first.id)
 # end
+
+# [' рассмотрение дела участники административного дела',
+# 'рассмотрение заявления в суде',
+# 'рассмотрение заявления о разводе'].each do |word|
+#   Keyword.create(keyword: word)
+# end
+
 
