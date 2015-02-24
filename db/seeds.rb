@@ -1,35 +1,16 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
-
-User.all.each do |content|
-  unless content.firstname
-    content.update_attributes(firstname: Vydumschik::Name.first_name, lastname: Vydumschik::Name.surname)
-  end
-end
-
+# (10000).times do
+#   User.create(firstname: Vydumschik::Name.first_name, lastname: Vydumschik::Name.surname)
+# end
 
 Keyword.all.each do |record|
-  unless record.translit
+  # unless record.translit
    record.update_attributes(translit: Keyword.generate_russian_translit(record.keyword).split(" ").join("_"))
-  end
+  # end
 end
 
 Question.all.each do |question|
-  unless question.user_id
-    if question.id == Question.first.id
-      question.update(user_id: User.first.id)
-    else
-      prev_question_user_id = Question.find(question.id - 1).user_id
-      question.update(user_id: User.find(prev_question_user_id + 1).id)
-    end
-  end
+  question.update_attribute(:user_id, User.order("RAND()").limit(1).first.id)
 end
 
 #------------------------------------------------------------------
