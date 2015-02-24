@@ -1,4 +1,3 @@
-
 # (10000).times do
 #   User.create(firstname: Vydumschik::Name.first_name, lastname: Vydumschik::Name.surname)
 # end
