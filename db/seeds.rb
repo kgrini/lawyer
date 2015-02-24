@@ -2,14 +2,14 @@
 #   User.create(firstname: Vydumschik::Name.first_name, lastname: Vydumschik::Name.surname)
 # end
 
-Keyword.all.each do |record|
-  # unless record.translit
-   record.update_attributes(translit: Keyword.generate_russian_translit(record.keyword).split(" ").join("_"))
-  # end
-end
+# Keyword.all.each do |record|
+#   # unless record.translit
+#    record.update_attributes(translit: Keyword.generate_russian_translit(record.keyword).split(" ").join("_"))
+#   # end
+# end
 
-Question.all.each do |question|
-  question.update_attribute(:user_id, User.order("RAND()").limit(1).first.id)
+Question.where(user_id: nil).all.each do |question|
+  question.update(user_id: User.order("RAND()").limit(1).first.id)
 end
 
 #------------------------------------------------------------------
