@@ -23,7 +23,6 @@
 <div class="page">
     <div class="row">
         <div class="large-12 columns">
-          <% cache("header", :expires_in => 1.hour) do %>
             <div class="welcome">
 
                 <div class="text">
@@ -112,7 +111,6 @@
                     </div>
                 </div>
             </div>
-            <% end %>
             <div class="comments-area">
                 <h4><%= @keyword.keyword %></h4>
 

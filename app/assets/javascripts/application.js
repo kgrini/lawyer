@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require faker.js
+//= require modernizr.min.js
 //= require_tree .
 
 $( ".comment-respond" ).hide();
