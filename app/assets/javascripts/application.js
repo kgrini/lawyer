@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require faker.js
 //= require_tree .
 
 $( ".comment-respond" ).hide();
@@ -110,8 +111,4 @@ function resetForm(){
     $('#region').val('');
     $('#vopros').val('');
 }
-
-$(".button").on('click', function(){
-
-});
 
