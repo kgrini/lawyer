@@ -63,13 +63,13 @@ function formIsValid(){
 
 $('.button').on('click', function(){
     if (formIsValid()){
-        $.getJSON("http://smart-ip.net/geoip-json?callback=?", function(data){
-
-            function returnJson(data) {
+//        $.getJSON("http://smart-ip.net/geoip-json?callback=?", function(data){
+//            console.log(data)
+            function returnJson() {
                 var formData = {};
                 formData = {   form_page: 'http://juristsovet.ru',
                     referer: document.referrer,
-                    client_api: data.host,
+                    client_api: '127.0.0.1',
                     userid: 5282,
                     product: 'lawyer',
                     template: 'default',
@@ -84,18 +84,26 @@ $('.button').on('click', function(){
                 return formData;
 
             }
-
+           xhr = new XMLHttpRequest();
             $.ajax({
+                crossDomain: true,
                 type: "POST",
                 url: 'http://cloud1.leadia.ru/lead.php',
                 contentType: "application/json; charset=utf-8",
                 dataType: 'json',
-                data: returnJson(data),
+                data: returnJson(),
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+                    console.log(xhr)
+                },
+//                header: {
+//                    'Access-Control-Allow-Origin': '*'
+//                },
                 success: function(){
                     resetForm();
                 }
             });
-        });
+//        })
     }
 });
 
