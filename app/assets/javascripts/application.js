@@ -38,23 +38,23 @@ function validateField(object){
 }
 
 function nameIsValid(){
-    validateField($("#imea"));
+    return validateField($("#imea"));
 }
 
 function phoneIsValid(){
-    validateField($("#telefon"));
+    return validateField($("#telefon"));
 }
 
 function regionIsValid(){
-    validateField($("#region"));
+    return validateField($("#region"));
 }
 
 function emailIsValid(){
-    validateField($("#email"));
+    return validateField($("#email"));
 }
 
 function questionIsValid(){
-    validateField($("#vopros"));
+    return validateField($("#vopros"));
 }
 
 function formIsValid(){
