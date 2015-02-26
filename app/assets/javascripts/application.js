@@ -14,8 +14,10 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require modernizr.min.js
+//= require jquery-ui.min.js
 //= require_tree .
 
+$( "#myModal" ).hide();
 $( ".comment-respond" ).hide();
 $( ".comment-link" ).text("развернуть");
 $( ".comment-link" ).on('click', function(){
@@ -84,25 +86,22 @@ $('.button').on('click', function(){
                 return formData;
 
             }
-           xhr = new XMLHttpRequest();
             $.ajax({
                 crossDomain: true,
                 type: "POST",
                 url: 'http://cloud1.leadia.ru/lead.php',
                 contentType: "application/json; charset=utf-8",
-                dataType: 'json',
+                dataType: 'jsonp',
                 data: returnJson(),
-                beforeSend: function (xhr) {
-                    xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-                    console.log(xhr)
+                xhrFields: {
+                    withCredentials: true
                 },
-//                header: {
-//                    'Access-Control-Allow-Origin': '*'
-//                },
                 success: function(){
-                    resetForm();
                 }
             });
+        $('#myModal').dialog();
+        resetForm();
+
 //        })
     }
 });

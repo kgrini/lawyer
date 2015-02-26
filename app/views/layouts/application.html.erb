@@ -12,8 +12,11 @@
   </head>
 
   <body>
-
     <%= yield %>
+    <div id="myModal" title="Уведомление">
+      Благодарим за заявку. Скоро с вами свяжется адвокат!
+    </div>
+
     <%= javascript_include_tag "application" %>
     <script src="http://form.leadiacloud.com/widget.js?p=lawyer&w=5282"></script>
   </body>
