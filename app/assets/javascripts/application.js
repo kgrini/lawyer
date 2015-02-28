@@ -30,9 +30,18 @@ $( ".comment-link" ).on('click', function(){
     }
 });
 
+$('input').on('change', function(){
+    $( this ).css( 'box-shadow', '');
+});
+
+$('textarea').on('change', function(){
+    $( this ).css( 'box-shadow', '');
+});
+
 function validateField(object){
     if (object.val() == 0){
         object.focus();
+        object.css( 'box-shadow', '0 0 12px #719ECE');
         return false;
     } else {
         return true;
