@@ -60,13 +60,12 @@ function questionIsValid(){
 }
 
 function formIsValid(){
-    return  questionIsValid() ||  regionIsValid() || emailIsValid() || phoneIsValid()|| nameIsValid()
+    return  !nameIsValid() || !phoneIsValid()|| !emailIsValid() ||  !regionIsValid() ||  !questionIsValid()
 }
 
 $('.button').on('click', function(){
-    if (formIsValid()){
+    if (!formIsValid()){
 //        $.getJSON("http://smart-ip.net/geoip-json?callback=?", function(data){
-//            console.log(data)
             function returnJson() {
                 var formData = {};
                 formData = {   form_page: 'http://juristsovet.ru',

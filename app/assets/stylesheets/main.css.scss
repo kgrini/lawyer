@@ -1300,6 +1300,12 @@ footer .copy p{
     font-size: 30px;
 }
 
+.input:focus {
+//  outline: none !important;
+  border:10px solid red;
+  box-shadow: 0 0 10px #719ECE;
+}
+
 .page-second .form-review input[type="text"], .page-second .form-review input[type="email"]{
     width: 100%;
     border: 1px solid #b1b1b1;
@@ -1309,6 +1315,11 @@ footer .copy p{
     margin-bottom: 10px;
     border-radius: 4px;
     -webkit-border-radius: 4px;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+  border:1px solid #25500;
+  box-shadow: 0 0 12px #719ECE;
 }
 
 .page-second .form-review textarea{
