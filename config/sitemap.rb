@@ -3,7 +3,7 @@ SitemapGenerator::Sitemap.default_host = "http://juristsovet.ru"
 
 SitemapGenerator::Sitemap.create do
 
-  Keyword.joins(questions: :user).each do |keyword|
+  Keyword.joins(questions: :user).uniq(:id).each do |keyword|
     add "/#{keyword.translit}", :changefreq => 'weekly', :priority => 0.9
   end
   # Put links creation logic here.
