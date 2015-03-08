@@ -35,6 +35,10 @@ gem 'mina'
 
 gem 'vydumschik'
 
+gem 'sitemap_generator'
+
+gem 'builder'
+
 # gem 'faker'
 
 # Use ActiveModel has_secure_password

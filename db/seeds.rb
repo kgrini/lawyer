@@ -8,7 +8,7 @@
 #   # end
 # end
 
-Question.where(user_id: nil).all.each do |question|
+Question.where(user_id: 30000).all.each do |question|
   question.update(user_id: User.order("RAND()").limit(1).first.id)
 end
 
