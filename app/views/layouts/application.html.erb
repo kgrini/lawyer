@@ -6,7 +6,7 @@
     <meta name='yandex-verification' content='491fa3000fe6a3c3' />
     <meta name="google-site-verification" content="N_nGPZaPiBcDucGlliHlhwRujBuQLhMYWKFhzlcoc54" />
     <meta name="description" content="Проведение юридических консультаций в бесплатно" />
-    <title><%= content_for?(:title) ? yield(:title) : "Бесплатная юридическая консультация" %></title>
+    <title><%= content_for?(:title) ? yield(:title).capitalize + ' - Juristsovet' : "Бесплатная юридическая консультация - Juristsovet" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%#= javascript_include_tag "vendor/modernizr.min" %>
@@ -20,7 +20,8 @@
     </div>
 
     <%= javascript_include_tag "application" %>
-    <script src="http://form.leadiacloud.com/widget.js?p=lawyer&w=5282"></script>
+    <script type="text/javascript"
+            src="http://api.leadiacloud.com/wi1.js?p=lawyer&w=5282&t=fabric&ft=fabricform&color=blue&f=roboform"></script>
 
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">

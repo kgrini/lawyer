@@ -39,6 +39,8 @@ gem 'sitemap_generator'
 
 gem 'builder'
 
+gem 'unicode'
+
 # gem 'faker'
 
 # Use ActiveModel has_secure_password
