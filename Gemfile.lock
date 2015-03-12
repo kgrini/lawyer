@@ -146,6 +146,7 @@ GEM
       json (~> 1.4)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
+    ryba (0.1.2)
     sass (3.2.19)
     sass-rails (4.0.5)
       railties (>= 4.0.0, < 5.0)
@@ -200,6 +201,7 @@ DEPENDENCIES
   mysql2
   pry-rails
   rails (= 4.1.1)
+  ryba
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   sitemap_generator

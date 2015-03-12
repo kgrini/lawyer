@@ -41,6 +41,8 @@ gem 'builder'
 
 gem 'unicode'
 
+gem 'ryba'
+
 # gem 'faker'
 
 # Use ActiveModel has_secure_password
