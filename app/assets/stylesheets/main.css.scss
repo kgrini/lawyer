@@ -977,15 +977,17 @@ header .button-area{
 }
 
 .comments-area .comment-list .comment .ava img{
-    border-radius: 50%;
+    /*border-radius: 50%;*/
     border: 1px solid #e2e5e9;
+    width: 64px;
+    padding: 10px;
 }
 
 .comments-area .comment-list .comment .comment-body{
     border: 1px solid #e2e5e9;
     padding: 20px 30px;
     display: inline-block;
-    max-width: 830px;
+    max-width: 865px;
     float: right;
     position: relative;
 }
@@ -1023,7 +1025,7 @@ header .button-area{
 
 .comments-area .comment-list .comment .comment-respond .ava{
     display: inline-block;
-    width: 105px;
+    width: 64px;
     vertical-align: top;
 }
 
