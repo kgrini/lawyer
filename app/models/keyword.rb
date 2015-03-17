@@ -2,10 +2,14 @@ class Keyword < ActiveRecord::Base
 
   has_many :questions
 
-  def self.get_random_contents
+  def self.select_21_link_in_random_order
     Rails.cache.fetch("keyword_random", :expires_in => 5.seconds) do
       select(:translit, :keyword).joins(questions: :user).uniq(:id).order("RAND()").first(21)
     end
+  end
+
+  def with_questions_and_users
+    questions.includes(:user).includes(:answers)
   end
 
   def self.generate_russian_translit(text)
