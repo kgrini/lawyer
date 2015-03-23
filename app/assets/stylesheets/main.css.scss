@@ -1168,6 +1168,7 @@ footer .number span{
 
 footer .copy{
     text-align: left;
+    margin-top: -52px;
 }
 
 footer .copy p{
@@ -1212,7 +1213,7 @@ footer .copy p{
     height: 262px;
     position: absolute;
     right: 75px;
-    top: 75px;
+    top: 95px;
     width: 181px;
     z-index: 10;
 }
@@ -1225,6 +1226,81 @@ footer .copy p{
     font-weight: normal;
     text-shadow: 2px 1px 3px #4696b4;
     margin: 12px 0 0 0;
+}
+
+.page-second .top .moskva{
+  font-family: 'LobsterTTF';
+  font-size: 25px;
+  line-height: 36px;
+  color: #ffffff;
+  font-weight: normal;
+  text-shadow: 2px 1px 3px #4696b4;
+  margin: -20px 0 0 -200px;
+  position: relative;
+  z-index: 50;
+}
+
+header .moskva{
+  font-size: 15px;
+  color: #ffffff;
+  margin: -10px 0 0 190px;
+  position: relative;
+  z-index: 50;
+}
+
+footer .moskva{
+  font-size: 15px;
+  color: #ffffff;
+  margin: -10px 0 0 28px;
+  position: relative;
+  z-index: 50;
+}
+
+.page-second .top .piter{
+  font-family: 'LobsterTTF';
+  font-size: 25px;
+  line-height: 36px;
+  color: #ffffff;
+  font-weight: normal;
+  text-shadow: 2px 1px 3px #4696b4;
+  margin: -88px 0 0 250px;
+  padding: 10px;
+  position: relative;
+  z-index: 52;
+}
+
+header .piter{
+  font-size: 15px;
+  color: #ffffff;
+  margin: -55px 0 0 320px;
+  padding: 10px;
+  position: relative;
+  z-index: 52;
+}
+
+footer .piter {
+  font-size: 15px;
+  color: #ffffff;
+  margin: -55px 0 0 170px;
+  padding: 10px;
+  position: relative;
+  z-index: 52;
+}
+
+header .piter span{
+  font-size: 13px;
+}
+
+footer .piter span{
+  font-size: 13px;
+}
+
+header .moskva span{
+  font-size: 13px;
+}
+
+footer .moskva span{
+  font-size: 13px;
 }
 
 .page-second .top h4{
@@ -1250,24 +1326,39 @@ footer .copy p{
   margin-top: -40px;
 }
 
-.page-second .top .phone{
+.page-second .top .phone_moskva{
     color: #ffffff;
-    font-size: 60px;
+    font-size: 25px;
     line-height: 60px;
     font-family: 'LobsterTTF';
-    margin: -30px 0 0 0;
+    z-index: 51;
+    margin: -20px 0 0 0;
 }
 
-.page-second .top .phone span{
+.page-second .top .phone_piter{
+  color: #ffffff;
+  font-size: 25px;
+  line-height: 60px;
+  font-family: 'LobsterTTF';
+
+  margin: -20px 0 0 0;
+}
+
+.page-second .top .phone_piter span{
     color: #e2f7ff;
-    font-size: 36px;
+    font-size: 20px;
+}
+
+.page-second .top .phone_moskva span{
+  color: #e2f7ff;
+  font-size: 20px;
 }
 
 .page-second .form-review{
     background: url("form-review.png");
     background-repeat: no-repeat;
     background-position: top center;
-    margin-top: -91px;
+    margin-top: -70px;
     max-width: 776px;
     min-height: 585px;
     position: relative;
