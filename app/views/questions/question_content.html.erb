@@ -1,248 +1,249 @@
 <% content_for :title, Unicode::capitalize(@keyword.keyword) %>
 <header>
-    <div class="row">
-        <div class="large-6 medium-6 small-12 columns">
-          <a class="home"
-             href="/">
-            <div class="logo">
-                ПРОФЕССИОНАЛЬНАЯ БЕСПЛАТНАЯ<br/>
-                ЮРИДИЧЕСКАЯ ПОМОЩЬ
-            </div>
-          </a>
+  <div class="row">
+    <div class="large-6 medium-6 small-12 columns">
+      <a class="home"
+         href="/">
+        <div class="logo">
+          ПРОФЕССИОНАЛЬНАЯ БЕСПЛАТНАЯ<br/>
+          ЮРИДИЧЕСКАЯ ПОМОЩЬ
         </div>
-        <div class="large-6 medium-6 small-12 columns">
-          <div class="moskva"> Москва
-            <div class="phone_moskva"> <span>8 (499)</span> 638-44-96</div>
-          </div>
-          <div class="piter"> Санкт-Петербург
-            <div class="phone_piter"> <span>8 (812)</span> 309-52-81</div>
-          </div>
-            <div class="button-area">
-                <span class="button header">заказать бесплатный звонок</span>
-            </div>
-        </div>
+      </a>
     </div>
+    <div class="large-6 medium-6 small-12 columns">
+      <div class="moskva"> Москва
+        <div class="phone_moskva"><span>8 (499)</span> 638-44-96</div>
+      </div>
+      <div class="piter"> Санкт-Петербург
+        <div class="phone_piter"><span>8 (812)</span> 309-52-81</div>
+      </div>
+      <div class="button-area">
+        <span class="button header">заказать бесплатный звонок</span>
+      </div>
+    </div>
+  </div>
 </header>
 
 <div class="page">
-    <div class="row">
-        <div class="large-12 columns">
-            <div class="welcome">
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="welcome">
 
-                <div class="text">
-                    <h3>НУЖДАЕТЕСЬ В БЕСПЛАТНОЙ КОНСУЛЬТАЦИИ ЮРИСТА?</h3>
+        <div class="text">
+          <h3>НУЖДАЕТЕСЬ В БЕСПЛАТНОЙ КОНСУЛЬТАЦИИ ЮРИСТА?</h3>
 
-                    <p>Заполните форму ниже или <a href="#" >закажите обратный звонок</a> и получите ответ через
-                        <span>14</span> минут.</p>
-                </div>
-
-            </div>
-
-            <div class="form">
-                <div class="row">
-                    <div class="large-3 columns">
-
-                    </div>
-                    <div class="large-9 columns">
-                        <h3>Заполните форму заявки и ждите звонка</h3>
-
-                        <form method="get">
-
-                            <div class="row">
-                                <div class="large-4 columns">
-                                    <input id="imea" type="text" value="" placeholder="Ф.И.О*">
-                                    <input id="telefon" type="text" value="" placeholder="№ телефона*">
-                                    <input id="email" type="text" value="" placeholder="email*">
-                                    <input id="region"  type="text" placeholder="регион*">
-                                </div>
-                                <div class="large-8 columns">
-                                    <textarea id="vopros" value="" placeholder="задайте вопрос*"></textarea>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="large-6 columns">
-                                    <span>Ваши данные не будут переданы третьим лицам.</span>
-                                </div>
-                                <div class="large-6 columns">
-                                    <a href="#" class="button button_on_page form-button">отправить вопрос</a>
-                                </div>
-                            </div>
-
-
-                        </form>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="box-area">
-                <div class="row">
-                    <div class="large-3 medium-3 small-3 columns">
-                        <div class="box">
-                            <a href="#" class="pen">
-                                Заполните форму
-                                заявки или закажите
-                                обратный звонок.
-                            </a>
-                        </div>
-                    </div>
-                    <div class="large-3 medium-3 small-12 columns">
-                        <div class="box">
-                            <a href="#" class="girl">
-                                Юрист перезвонит и
-                                расскажет о этапах
-                                решения проблемы.
-                            </a>
-                        </div>
-                    </div>
-                    <div class="large-3 medium-3 small-3 columns">
-                        <div class="box">
-                            <a href="#" class="list">
-                                Поможем собрать
-                                все необходимые
-                                документы для дела.
-                            </a>
-                        </div>
-                    </div>
-                    <div class="large-3 medium-3 small-3 columns">
-                        <div class="box">
-                            <a href="#" class="flag">
-                                Доведем дело
-                                до логического конца.
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="comments-area">
-                <h4><%= @keyword.keyword %></h4>
-
-                <div class="comment-list">
-                    <% @questions.each do |content| %>
-
-                    <div class="comment">
-
-                        <div class="ava">
-                            <img src="<%= raw content.user.avatar %>"/>
-                        </div>
-
-                        <div class="comment-body">
-                            <h4><%= content.user.firstname %> <%= content.user.lastname %></h4>
-
-                            <p><%= content.body %></p>
-
-                        </div>
-
-                        <div class="clearfix"></div>
-                        <% if content.answers.present? %>
-                            <div class="comment-respond">
-                                <div class="ava">
-                                  <img />
-                                </div>
-
-                                <div class="comment-body">
-                                    <h4><%= content["answer"] %></p></h4><span class="stars"></span>
-
-                                    <p>
-                                    <p><%=content["banswer"] %></p>
-                                    </p>
-
-                                </div>
-                            </div>
-
-                            <div class="comment-link new-cursor">
-                                свернуть
-                            </div>
-                       <% end %>
-                    </div>
-                    <% end %>
-                </div>
-            </div>
-
+          <p>Заполните форму ниже или <a href="#">закажите обратный звонок</a> и получите ответ через
+            <span>14</span> минут.</p>
         </div>
-    </div>
-</div>
 
-<div class="page-bottom">
+      </div>
 
-    <div class="row">
-        <div class="large-12 columns">
-            <h3>
-                <span>актуальные темы:</span>
-            </h3>
+      <div class="form">
+        <div class="row">
+          <div class="large-3 columns">
+
+          </div>
+          <div class="large-9 columns">
+            <h3>Заполните форму заявки и ждите звонка</h3>
+
+            <form method="get">
+
+              <div class="row">
+                <div class="large-4 columns">
+                  <input id="imea" type="text" value="" placeholder="Ф.И.О*">
+                  <input id="telefon" type="text" value="" placeholder="№ телефона*">
+                  <input id="email" type="text" value="" placeholder="email*">
+                  <input id="region" type="text" placeholder="регион*">
+                </div>
+                <div class="large-8 columns">
+                  <textarea id="vopros" value="" placeholder="задайте вопрос*"></textarea>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="large-6 columns">
+                  <span>Ваши данные не будут переданы третьим лицам.</span>
+                </div>
+                <div class="large-6 columns">
+                  <a href="#" class="button button_on_page form-button">отправить вопрос</a>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
-    </div>
-
-    <div class="row">
-        <div class="large-4 medium-12 small-12 columns">
-            <ul>
-                <% @urls.first(7).each do |url| %>
-                <li><%= link_to url.keyword,  controller: :questions, action: :question_content, keyword: url.translit %></li>
+      </div>
+      <div class="box-area">
+        <div class="row">
+          <div class="large-3 medium-3 small-3 columns">
+            <div class="box">
+              <a href="#" class="pen">
+                Заполните форму
+                заявки или закажите
+                обратный звонок.
+              </a>
+            </div>
+          </div>
+          <div class="large-3 medium-3 small-12 columns">
+            <div class="box">
+              <a href="#" class="girl">
+                Юрист перезвонит и
+                расскажет о этапах
+                решения проблемы.
+              </a>
+            </div>
+          </div>
+          <div class="large-3 medium-3 small-3 columns">
+            <div class="box">
+              <a href="#" class="list">
+                Поможем собрать
+                все необходимые
+                документы для дела.
+              </a>
+            </div>
+          </div>
+          <div class="large-3 medium-3 small-3 columns">
+            <div class="box">
+              <a href="#" class="flag">
+                Доведем дело
+                до логического конца.
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="comments-area">
+        <h4><%= @keyword.keyword %></h4>
+        <div class="comment-list">
+          <% @questions.each do |content| %>
+              <div class="comment">
+                <div class="ava">
+                  <img src="<%= raw content.user.avatar %>"/>
+                </div>
+                <div class="comment-body">
+                  <h4><%= content.user.firstname %> <%= content.user.lastname %></h4>
+                  <p><%= content.body %></p>
+                </div>
+                <div class="clearfix"></div>
+                <% if content.answers.present? %>
+                    <div class="comment-respond">
+                      <div class="ava">
+                        <img/>
+                      </div>
+                      <div class="comment-body">
+                        <h4><%= content["answer"] %></p></h4><span class="stars"></span>
+                        <p>
+                        <p><%= content["banswer"] %></p>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="comment-link new-cursor">
+                      свернуть
+                    </div>
                 <% end %>
-            </ul>
+              </div>
+          <% end %>
         </div>
-
-        <div class="large-4 medium-12 small-12 columns">
-            <ul>
-              <% @urls.first(14).last(7).each do |url| %>
-                  <li><%= link_to url.keyword, controller: :questions, action: :question_content, keyword: url.translit %></li>
-              <% end %>
-            </ul>
-        </div>
-
-        <div class="large-4 medium-12 small-12 columns">
-            <ul>
-              <% @urls.last(7).each do |url| %>
-                  <li><%= link_to url.keyword, controller: :questions, action: :question_content, keyword: url.translit %></li>
-              <% end %>
-            </ul>
-
-            <div class="brush"></div>
-        </div>
-
+      </div>
     </div>
+  </div>
+</div>
+<div class="page-bottom">
+  <div class="row">
+    <div class="large-12 columns">
+      <h3>
+        <span>актуальные темы:</span>
+      </h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-4 medium-12 small-12 columns">
+      <ul>
+        <% @urls.first(7).each do |url| %>
+          <li>
+            <%=
+              link_to(
+                url.keyword,
+                controller: :questions,
+                action: :question_content,
+                keyword: url.translit
+              )
+            %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="large-4 medium-12 small-12 columns">
+      <ul>
+        <% @urls.first(14).last(7).each do |url| %>
+          <li>
+            <%=
+              link_to(
+                url.keyword,
+                controller: :questions,
+                action: :question_content,
+                keyword: url.translit
+              )
+            %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="large-4 medium-12 small-12 columns">
+      <ul>
+        <% @urls.last(7).each do |url| %>
+          <li>
+            <%=
+              link_to(
+                url.keyword,
+                controller: :questions,
+                action: :question_content,
+                keyword: url.translit
+              )
+            %>
+          </li>
+        <% end %>
+      </ul>
+      <div class="brush"></div>
+    </div>
+  </div>
 </div>
 
 <footer>
-    <div class="row">
-      <div class="moskva"> Москва
-        <div class="phone_moskva"> <span>8 (499)</span> 638-44-96</div>
-      </div>
-      <div class="piter"> Санкт-Петербург
-        <div class="phone_piter"> <span>8 (812)</span> 309-52-81</div>
-      </div>
-        <div class="large-3 medium-6 small-12 columns">
-
-          <div class="button-area">
-            <span class="button header">заказать бесплатный звонок</span>
-          </div>
-
-        </div>
-
-        <div class="large-9 medium-6 small-12 columns">
-            <div class="copy">
-                <p>© jirustsovet.ru, 2015</p>
-
-                <p>Все права защищены.</p>
-            </div>
-        </div>
+  <div class="row">
+    <div class="moskva"> Москва
+      <div class="phone_moskva"><span>8 (499)</span> 638-44-96</div>
     </div>
+    <div class="piter"> Санкт-Петербург
+      <div class="phone_piter"><span>8 (812)</span> 309-52-81</div>
+    </div>
+    <div class="large-3 medium-6 small-12 columns">
+      <div class="button-area">
+        <span class="button header">заказать бесплатный звонок</span>
+      </div>
+    </div>
+    <div class="large-9 medium-6 small-12 columns">
+      <div class="copy">
+        <p>© jirustsovet.ru, 2015</p>
+
+        <p>Все права защищены.</p>
+      </div>
+    </div>
+  </div>
 </footer>
 
 <script>
-    (function (b, o, i, l, e, r) {
-        b.GoogleAnalyticsObject = l;
-        b[l] || (b[l] =
-                function () {
-                    (b[l].q = b[l].q || []).push(arguments)
-                });
-        b[l].l = +new Date;
-        e = o.createElement(i);
-        r = o.getElementsByTagName(i)[0];
-        e.src = '//www.google-analytics.com/analytics.js';
-        r.parentNode.insertBefore(e, r)
-    }(window, document, 'script', 'ga'));
-    ga('create', 'UA-XXXXX-X');
-    ga('send', 'pageview');
+  (function (b, o, i, l, e, r) {
+      b.GoogleAnalyticsObject = l;
+      b[l] || (b[l] =
+          function () {
+              (b[l].q = b[l].q || []).push(arguments)
+          });
+      b[l].l = +new Date;
+      e = o.createElement(i);
+      r = o.getElementsByTagName(i)[0];
+      e.src = '//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e, r)
+  }(window, document, 'script', 'ga'));
+  ga('create', 'UA-XXXXX-X');
+  ga('send', 'pageview');
 </script>

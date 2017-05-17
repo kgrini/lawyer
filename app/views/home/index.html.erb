@@ -1,52 +1,59 @@
 <div class="page-second">
-    <div class="row">
-        <div class="small-12 large-12 columns">
+  <div class="row">
+    <div class="small-12 large-12 columns">
 
-            <div class="top">
-                <div class="man"></div>
-                <div class="vesi"></div>
-                <h3>Получите юридическую<br />
-                помощь совершенно</h3>
+      <div class="top">
+        <div class="man"></div>
+        <div class="vesi"></div>
+        <h3>Получите юридическую<br/>
+          помощь совершенно</h3>
 
-                <span class="free-title">&nbsp;</span>
+        <span class="free-title">&nbsp;</span>
 
-                <div class="moskva"> Москва
-                    <div class="phone_moskva"> <span>8 (499)</span> 638-44-96</div>
-                </div>
-              <div class="piter"> Санкт-Петербург
-                <div class="phone_piter"> <span>8 (812)</span> 309-52-81</div>
-              </div>
-            </div>
-
-            <div class="row">
-                <div class="large-10 large-centered columns">
-                    <div class="form-review">
-                        <form>
-                            <h3>Заполните форму и мы перезвоним Вам через <span>14</span> минут</h3>
-                            <input id="imea" type="text" value=""  placeholder="Ф.И.О*">
-                            <input id="telefon" type="text" value="" placeholder="№ телефона*">
-                            <input id="email" type="email" value="" placeholder="e-mail*">
-                            <input id="region" type="text" value="" placeholder="регион*">
-                            <textarea id="vopros" value="" placeholder="задайте вопрос*"></textarea>
-                            <h4>* обязательное поле для заполнения</h4>
-                            <a class="button" href="#">Отправить</a>
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="tags">
-                <% @keywords.each do |keyword| %>
-                  <%= link_to keyword.keyword, controller: :questions, action: :question_content, keyword: keyword.translit %>
-                <% end %>
-            </div>
-
-            <div class="copy">
-                © jirustsovet.ru, 2015. Все права защищены.
-            </div>
-
+        <div class="moskva"> Москва
+          <div class="phone_moskva"><span>8 (499)</span> 638-44-96</div>
         </div>
+        <div class="piter"> Санкт-Петербург
+          <div class="phone_piter"><span>8 (812)</span> 309-52-81</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="large-10 large-centered columns">
+          <div class="form-review">
+            <form>
+              <h3>Заполните форму и мы перезвоним Вам через <span>14</span> минут</h3>
+              <input id="imea" type="text" value="" placeholder="Ф.И.О*">
+              <input id="telefon" type="text" value="" placeholder="№ телефона*">
+              <input id="email" type="email" value="" placeholder="e-mail*">
+              <input id="region" type="text" value="" placeholder="регион*">
+              <textarea id="vopros" value="" placeholder="задайте вопрос*"></textarea>
+              <h4>* обязательное поле для заполнения</h4>
+              <a class="button" href="#">Отправить</a>
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="tags">
+        <% @keywords.each do |keyword| %>
+            <%=
+              link_to(
+                keyword.keyword,
+                controller: :questions,
+                action: :question_content,
+                keyword: keyword.translit
+              )
+            %>
+        <% end %>
+      </div>
+
+      <div class="copy">
+        © jirustsovet.ru, 2015. Все права защищены.
+      </div>
+
     </div>
+  </div>
 
 </div>

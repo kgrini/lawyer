@@ -4,7 +4,11 @@ class Keyword < ActiveRecord::Base
 
   def self.select_21_link_in_random_order
     Rails.cache.fetch("keyword_random", :expires_in => 5.seconds) do
-      select(:translit, :keyword).joins(questions: :user).uniq(:id).order("RAND()").first(21)
+      select(:translit, :keyword)
+        .joins(questions: :user)
+        .uniq(:id)
+        .order("RAND()")
+        .first(21)
     end
   end
 
